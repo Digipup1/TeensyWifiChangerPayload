@@ -14,4 +14,6 @@ Some applications for this project*:
 2. MITM
 3. A quick way to change wifi settings
 
+Please note that I borrowed some of Samyk's USB driveby code (thanks and credit to him for such portions of code)
+
 *Please read license
