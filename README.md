@@ -14,4 +14,4 @@ Some applications for this project*:
 2. MITM
 3. A quick way to change wifi settings
 
-*Note that I do not take responsibility for your actions
+*Please read license
