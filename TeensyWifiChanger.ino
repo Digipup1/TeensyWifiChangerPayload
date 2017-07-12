@@ -1,4 +1,5 @@
-//Made by Dave https://github.com/Digipup1
+//TeensyWifiChangerPayload by Dave
+//https://github.com/Digipup1
 int led = 13;
 int ds = 500;
 void setup() {
