@@ -8,7 +8,6 @@ pinMode(led, OUTPUT);
   delay(ds);
   openapp("Terminal");
   cmd(KEY_N);
-NAMEOFWIFINETWORK
   typeln("osascript -e 'tell application \"System Events\" to set bounds of window \"System Preferences\" of application \"System Preferences\" to {0, 0, 700, 700}'");
   cmd(KEY_TAB);
   cmd(KEY_F);
