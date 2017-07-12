@@ -8,7 +8,7 @@ pinMode(led, OUTPUT);
   delay(ds);
   openapp("Terminal");
   cmd(KEY_N);
-  delay(ds);
+NAMEOFWIFINETWORK
   typeln("osascript -e 'tell application \"System Events\" to set bounds of window \"System Preferences\" of application \"System Preferences\" to {0, 0, 700, 700}'");
   cmd(KEY_TAB);
   cmd(KEY_F);
@@ -16,19 +16,19 @@ pinMode(led, OUTPUT);
   k(KEY_ENTER);
   delay(ds);
 
+
   //moving to network name selection
-  Mouse.move(445, 229);
+  Mouse.move(0, 0); //broken
   delay(ds);
   Mouse.click();
-  Keyboard.press(KEY_DOWN);
+  Keyboard.press(KEY_DOWN); 
   delay(3000);
   Keyboard.releaseAll();
   k(KEY_ENTER);
   typeln("NAMEOFWIFINETWORK"); //replace with your network name
-  Mouse.move(390, 195);
+  Mouse.move(0, 0); //broken
   delay(ds);
   Mouse.click();
-  
   //k(KEY_DOWN); //uncomment if your new network uses WEP
   //k(KEY_DOWN); //uncomment if your new network uses WPA/WPA2 Personal 
   //k(KEY_DOWN); //uncomment if your new network uses WPA2 Personal
