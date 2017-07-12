@@ -16,12 +16,11 @@ pinMode(led, OUTPUT);
   k(KEY_ENTER);
   delay(ds);
 
-
   //moving to network name selection
   Mouse.move(445, 229);
   delay(ds);
   Mouse.click();
-  Keyboard.press(KEY_DOWN); //create for loop later
+  Keyboard.press(KEY_DOWN);
   delay(3000);
   Keyboard.releaseAll();
   k(KEY_ENTER);
