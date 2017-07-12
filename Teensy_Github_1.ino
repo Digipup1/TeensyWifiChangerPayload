@@ -28,6 +28,7 @@ pinMode(led, OUTPUT);
   Mouse.move(390, 195);
   delay(ds);
   Mouse.click();
+  
   //k(KEY_DOWN); //uncomment if your new network uses WEP
   //k(KEY_DOWN); //uncomment if your new network uses WPA/WPA2 Personal 
   //k(KEY_DOWN); //uncomment if your new network uses WPA2 Personal
