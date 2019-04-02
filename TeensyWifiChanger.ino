@@ -1,5 +1,6 @@
 //TeensyWifiChangerPayload by Dave
 //https://github.com/Digipup1
+//Credit to samyk for snippets of code used from his usbdriveby project
 int led = 13;
 int ds = 500;
 void setup() {
@@ -18,40 +19,46 @@ pinMode(led, OUTPUT);
   delay(ds);
 
 
-  //moving to network name selection
-  Mouse.move(0, 0); //broken
+  #if !defined(CORE_TEENSY)
+  Mouse.begin();
+  #endif
+  
+    // Move to top left of screen
+  for (int i = 0; i < 1000; i++)
+  {
+    Mouse.move(-10, -10);
+    delay(1);
+  }
+
+  delay(500);
+  
+ //moving to network name selection
+  Mouse.move(100, 100);
+  Mouse.move(100, 28);
+
+
   delay(ds);
   Mouse.click();
-  Keyboard.press(KEY_DOWN); 
+  
+  
+  Keyboard.press(KEY_DOWN); //moving ALL the way down in case of lots
+  //of available networks
   delay(3000);
   Keyboard.releaseAll();
   k(KEY_ENTER);
-  typeln("NAMEOFWIFINETWORK"); //replace with your network name
-  Mouse.move(0, 0); //broken
-  delay(ds);
-  Mouse.click();
-  //k(KEY_DOWN); //uncomment if your new network uses WEP
-  //k(KEY_DOWN); //uncomment if your new network uses WPA/WPA2 Personal 
-  //k(KEY_DOWN); //uncomment if your new network uses WPA2 Personal
-  //k(KEY_DOWN); //uncomment if your new network uses Dynamic WEP
-  //k(KEY_DOWN); //uncomment if your new network uses WPA/WPA2 Enterprise
-  //k(KEY_DOWN); //uncomment if your new network uses WPA2 Enterprise
-  k(KEY_ENTER);
-  delay(ds);
+  typeln("iPhone (5)"); //replace with your network name
+  k(KEY_ENTER); //make this a comment if you have network security
+  delay(3000);
+
+  
+  typeln("passwordisrightnow"); //uncomment if needed for network
+  k(KEY_ENTER); //password
 
   //exit out of everything
   cmd(KEY_Q);
   cmd(KEY_Q);
   
-  //blink when finished
-  digitalWrite(led, HIGH);  //Blink when done 
-  delay(1000);              
-  digitalWrite(led, LOW);   
-  delay(1000);
-  digitalWrite(led, HIGH);   
-  delay(1000);               
-  digitalWrite(led, LOW);    
-  delay(1000);   
+     
 }
 
 
@@ -105,4 +112,15 @@ void k(int key)
 
 
 
-void loop(){}
+void loop(){
+  
+  //blink when finished
+  digitalWrite(led, HIGH);  //Blink when done 
+  delay(1000);              
+  digitalWrite(led, LOW);   
+  delay(1000);
+  digitalWrite(led, HIGH);   
+  delay(1000);               
+  digitalWrite(led, LOW);    
+  delay(1000); 
+    }
